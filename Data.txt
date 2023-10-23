@@ -1,0 +1,21 @@
+2
+Ingineria Software
+ISA
+SOFTWARE_ENGINEERING
+1
+Boris
+Perlog
+boris.perlog@email.com
+2000-12-12
+2000-12-12
+false
+Design Interior
+DIN
+URBANISM_ARCHITECTURE
+1
+Roman
+Lupan
+roman.lupan@email.com
+2000-12-12
+2000-12-12
+false
