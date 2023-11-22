@@ -8,6 +8,9 @@ public class Application {
     public static String GREEN = "\u001B[32m";
     public static String BLUE = "\u001B[34m";
     public static String YELLOW = "\u001B[33m";
+
+    private InspectionThread inspectionThread = new InspectionThread(this);
+    private InputThread inputThread = new InputThread(this);
     private Scanner scanner;
     private Snapshot lastSnapshot;
     private Snapshot currentSnapshot;
@@ -19,8 +22,7 @@ public class Application {
 
         //this.currentSnapshot = new Snapshot();
 
-        InspectionThread inspectionThread = new InspectionThread(this);
-        InputThread inputThread = new InputThread(this);
+
         inspectionThread.start();
         inputThread.start();
     }
@@ -62,6 +64,8 @@ public class Application {
                 break;
             case "quit":
                 System.out.println("Exiting program...");
+                inspectionThread.interrupt();
+                inputThread.interrupt();
                 this.shouldClose = true;
                 break;
             default:

@@ -25,7 +25,7 @@ public class Snapshot {
     private List<File> fileObjs;
     private List<MyFile> files;
     private LocalDateTime time;
-    String path = "C:\\Users\\Boris\\Desktop\\Laboratories\\Laboratories\\Resources";
+    String path = "C:\\Users\\Boris\\Desktop\\University\\3rd Semester\\OOP\\Laboratories\\Resources";
 
     public Snapshot() {
 
