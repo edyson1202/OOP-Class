@@ -17,16 +17,22 @@ public class Application {
         this.lastSnapshot = null;
         this.currentSnapshot = null;
 
-        this.currentSnapshot = new Snapshot();
+        //this.currentSnapshot = new Snapshot();
+
+        InspectionThread inspectionThread = new InspectionThread(this);
+        InputThread inputThread = new InputThread(this);
+        inspectionThread.start();
+        inputThread.start();
     }
     public void run() {
         while (!shouldClose) {
-            printOperations();
-            String cmd = scanner.nextLine();
-            processOperations(cmd);
+            //printOperations();
+            //String cmd = scanner.nextLine();
+            //processOperations(cmd);
+
         }
     }
-    private void processOperations(String cmd) {
+    public void processOperations(String cmd) {
         String[] cmds = cmd.split(" ");
 /*        for (int i = 0; i < cmds.length; i++) {
             System.out.println(cmds[i]);
@@ -72,7 +78,7 @@ public class Application {
         System.out.println("4.quit");
         System.out.println("-->");
     }
-    private void commit() {
+    public void commit() {
         this.lastSnapshot = this.currentSnapshot;
         this.currentSnapshot = new Snapshot();
         if (this.lastSnapshot != null && this.currentSnapshot != null)
@@ -104,6 +110,8 @@ public class Application {
         else
             newFile.setStatus("Changed");
     }
+    public Scanner getScanner() { return this.scanner; }
+    public Snapshot getCurrentSnapshot() { return this.currentSnapshot; }
 }
 
 

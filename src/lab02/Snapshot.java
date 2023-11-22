@@ -25,12 +25,12 @@ public class Snapshot {
     private List<File> fileObjs;
     private List<MyFile> files;
     private LocalDateTime time;
-    String path = "C:\\Users\\Boris\\Desktop\\University\\3rd Semester\\OOP\\Laboratories\\Resources";
+    String path = "C:\\Users\\Boris\\Desktop\\Laboratories\\Laboratories\\Resources";
 
     public Snapshot() {
 
         this.time = java.time.LocalDateTime.now();
-        System.out.println("Commit made at: " + this.time);
+        //System.out.println("Commit made at: " + this.time);
         this.files = new ArrayList<>();
 
         getFileObjects(this.path);
